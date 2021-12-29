@@ -1,6 +1,6 @@
 # blocky
 
-![Version: 9.1.0](https://img.shields.io/badge/Version-9.1.0-informational?style=flat-square) ![AppVersion: v0.15](https://img.shields.io/badge/AppVersion-v0.15-informational?style=flat-square)
+![Version: 10.0.0](https://img.shields.io/badge/Version-10.0.0-informational?style=flat-square) ![AppVersion: v0.17](https://img.shields.io/badge/AppVersion-v0.17-informational?style=flat-square)
 
 DNS proxy as ad-blocker for local network
 
@@ -75,14 +75,14 @@ N/A
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| config | string | see URL to default config | Full list of options https://github.com/0xERR0R/blocky/blob/master/docs/config.yml |
+| config | string | see URL to default config | Full list of options https://github.com/0xERR0R/blocky/blob/v0.17/docs/config.yml |
 | controller.replicas | int | `1` | (int) Number of pods to load balance between |
 | controller.strategy | string | `"RollingUpdate"` | Set the controller upgrade strategy |
 | env | object | See below | environment variables. See [image docs](https://0xerr0r.github.io/blocky/installation/#run-with-docker) for more details. |
 | env.TZ | string | `"UTC"` | Set the container timezone |
 | image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | image.repository | string | `"spx01/blocky"` | image repository |
-| image.tag | string | `"v0.15"` | image tag |
+| image.tag | string | `"v0.17"` | image tag |
 | metrics.enabled | bool | See values.yaml | Enable and configure a Prometheus serviceMonitor for the chart under this key. |
 | metrics.prometheusRule | object | See values.yaml | Enable and configure Prometheus Rules for the chart under this key. |
 | metrics.prometheusRule.rules | list | See prometheusrules.yaml | Configure additionial rules for the chart under this key. |
@@ -97,6 +97,12 @@ N/A
 All notable changes to this application Helm chart will be documented in this file but does not include changes from our common library. To read those click [here](https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common#changelog).
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+### [Unreleased]
+
+#### Changed
+
+- **BREAKING**: Updated Blocky image and AppVersion to v0.17. This version of Blocky has a few backwards-incompatible `config.yml` differences compared to v0.15. Update your `config` chart values to check the `upstream`, `queryLog`, `certFile`, and `keyFile` settings (if applicable).
 
 ### [9.0.0]
 
